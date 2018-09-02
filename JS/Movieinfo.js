@@ -3,7 +3,7 @@ var data=localStorage.getItem("data");
 function UserAction() {
     var xhttp = new XMLHttpRequest();
     var method = "POST";
-    var url = "http://www.omdbapi.com/" +data;
+    var url = "https://www.omdbapi.com/" +data;
     
     console.log(url);
     
