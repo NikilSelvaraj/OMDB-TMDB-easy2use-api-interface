@@ -23,7 +23,12 @@
                       font-size: 50px;
                       color: grey;
                       visibility: hidden;
-                    }</style>
+                    }
+                    .card-text{
+                      clear: right;
+                      overflow: auto;
+                    }
+                    </style>
     </head><body onload=" UserAction()">
           
             <nav class="navbar navbar-dark bg-dark">
@@ -50,12 +55,11 @@
                   </nav>
                     <div class="card" id="card" style="width: 100%; visibility: hidden;">
                         <div class="card-body">
-                        <section id="poster"></section>                          
+                        <section id="poster"></section> 
+                                                  
                           <h5 class="card-title">Card title</h5>
                           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                           <p class="card-text"></p>
-                          <a href="#" class="card-link">Website</a>
-                          <a href="#" class="card-link">Another link</a> 
                         </div>
                       </div>
                       <div id="img1"><img  id="img" src="" alt="Movie not Found" width="70%" height="40%" style="margin-top:-100px; visibility: hidden;"/></div>

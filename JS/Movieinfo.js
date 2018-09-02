@@ -17,9 +17,18 @@ function UserAction() {
            document.getElementsByClassName("card-title")[0].innerHTML=myobj.Title;
            document.getElementsByClassName("card-subtitle mb-2 text-muted")[0].innerHTML=myobj.Genre+"</br>  Ratings: "+myobj.Ratings[0].Value;
            document.getElementsByClassName("card-text")[0].innerHTML="Director : "+myobj.Director+"<br /> Writers : "+myobj.Writer+"</br>"+"Actors : "+myobj.Actors+"<br/>"+"Language : "+myobj.Language+
-           "</br>"+"Awards : "+myobj.Awards+"</br>"+"Release Date : "+myobj.Released+"</br>"+"imdbID : "+myobj.imdbID+"</br>"+"Plot : "+myobj.Plot;
-           if(myobj.Website!=="N/A")
-           document.getElementsByClassName("card-link")[0].href=myobj.Website;
+           "</br>"+"Awards : "+myobj.Awards+"</br>"+"Release Date : "+myobj.Released+"</br>"+"imdbID : "+myobj.imdbID+"</br>"+"Plot : "+myobj.Plot+"</br>";
+           if(myobj.Website!=="N/A"){
+           var aTag = document.createElement('a');
+           aTag.setAttribute('href',myobj.Website);
+           var aTag1 = document.createElement('a');
+           aTag1.setAttribute('href',myobj.Website);
+           aTag.setAttribute('class',"card-link");
+           aTag1.setAttribute('class',"card-link");
+           aTag1.innerHTML = "Website";
+           aTag.innerHTML = "Alternate Link";
+           document.getElementsByClassName("card-text")[0].appendChild(aTag1);
+           document.getElementsByClassName("card-text")[0].appendChild(aTag);}
            document.getElementById("card").style.visibility = "visible";
            }
            else{
