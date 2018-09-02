@@ -14,8 +14,12 @@ function UserAction() {
          if (this.readyState === 4 && this.status === 200) {
            myobj=JSON.parse(this.responseText); 
            if(myobj.Response!="False"){
+               console.log(myobj);
            document.getElementsByClassName("card-title")[0].innerHTML=myobj.Title;
-           document.getElementsByClassName("card-subtitle mb-2 text-muted")[0].innerHTML=myobj.Genre+"</br>  Ratings: "+myobj.Ratings[0].Value;
+           if(myobj.Ratings.length!=0)
+           document.getElementsByClassName("card-subtitle mb-2 text-muted")[0].innerHTML=myobj.Genre+"</br>  Ratings : "+myobj.Ratings[0].Value;
+           else
+           document.getElementsByClassName("card-subtitle mb-2 text-muted")[0].innerHTML=myobj.Genre+"</br>  Ratings : N/A";
            document.getElementsByClassName("card-text")[0].innerHTML="Director : "+myobj.Director+"<br /> Writers : "+myobj.Writer+"</br>"+"Actors : "+myobj.Actors+"<br/>"+"Language : "+myobj.Language+
            "</br>"+"Awards : "+myobj.Awards+"</br>"+"Release Date : "+myobj.Released+"</br>"+"imdbID : "+myobj.imdbID+"</br>"+"Plot : "+myobj.Plot+"</br>";
            if(myobj.Website!=="N/A"){
